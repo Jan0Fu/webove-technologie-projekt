@@ -1,0 +1,58 @@
+* {
+    font-family: Jaturat, Roboto, sans-serif, Arial;
+    box-sizing: border-box;
+    overflow: auto;
+}
+@font-face {
+    font-family: 'Jaturat';
+    src: url('https://db.onlinewebfonts.com/t/cf3fb387331afda8f5d7f9c8dea3cd13.woff2') format('woff2'),
+         url('https://db.onlinewebfonts.com/t/cf3fb387331afda8f5d7f9c8dea3cd13.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    overflow: auto;
+}
+#logo {
+    margin-top: 20px;
+    margin-left: 200px;
+    height: 70px;
+    width: auto;
+}
+.header {
+    background-color: black;
+    display: flex;
+    color: #FAFB63;
+    font-size: 24px;
+    min-width: 200px;
+}
+nav > ul {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 150px;
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: large;
+    color: #b0b9c2;
+}
+.hero {
+    background-color: black;
+    color: #FAFB63;
+    font-size: 70px;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-text {
+    width: 600px;
+    text-align: center;
+}
+#main-header {
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1;
+}
