@@ -4,6 +4,7 @@
     overflow: auto;
 }
 body {
+    background-color: black;
     margin: 0;
     overflow: auto;
 }
@@ -124,4 +125,33 @@ body {
     font-size: 16px;
     margin: 100px 20px;
     cursor: pointer; 
+}
+.gallery {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.gallery > h2 {
+    font-size: 50px;
+    color: #6BFFF7;
+}
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+}
+.thumbnails img {
+    height: 100px;
+    width: auto;
+    margin: 5px;
+    cursor: pointer;
+}
+.full-image-container {
+    margin-top: 20px;
+}
+.full-image {
+    max-width: 100%;
+    height: auto;
 }
