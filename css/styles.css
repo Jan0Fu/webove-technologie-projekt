@@ -9,11 +9,10 @@ body {
     overflow: auto;
 }
 #logo {
-    min-width: 200px;
     margin-top: 10px;
-    margin-left: 150px;
-    margin-right: 50px;
-    height: 100px;
+    margin-left: 120px;
+    max-width: 40%;
+    height: auto;
     
 }
 .header {
@@ -21,7 +20,10 @@ body {
     display: flex;
     color: #FAFB63;
     font-size: 24px;
-    min-width: 200px;
+    min-width: 160px;
+    width: 100%;
+    position: fixed;
+    z-index: 4;
 }
 .nav-button {
     background-color: #43bb47;
@@ -34,7 +36,7 @@ body {
     font-size: 20px;
     margin: 20px 20px;
     cursor: pointer;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 .nav-button:hover {
     background-color: #37903b; 
@@ -43,7 +45,7 @@ body {
     background-color: black;
     color: #FAFB63;
     font-size: 61px;
-    height: 800px;
+    height: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,12 +53,13 @@ body {
 .hero-img {
     position: absolute;
     margin-right: 700px;
+
     z-index: 1;
 }
 #figure {
     margin: 50px;
-    height: 500px;
-    width: auto;
+    max-width: 80%;
+    height: auto;
 }
 .hero-text {
     width: 650px;
@@ -70,15 +73,30 @@ body {
     line-height: 1;
 }
 .team {
-    padding-top: 100px;
     background-color: black;
     color: white;
     height: 800px;
     display: flex;
 }
+@media (max-width: 850px) {
+    .team {
+    flex-direction: column;
+    }
+    .team-text {
+
+    }
+    #team-img {
+        display: none;
+    }
+    #figure {
+        display: none;
+    }
+
+}
 .team-text {
     margin: 50px;
     width: 700px;
+    font-style: italic;
 }
 .team-text > h2 {
     font-size: 60px;
@@ -89,8 +107,8 @@ body {
     margin-top: 120px;
     margin-left: 50px;
     position: absolute;
-    height: 360px;
-    width: auto;
+    max-width: 30%;
+    height: auto;
 }
 .join {
     background-color: black;
@@ -154,4 +172,45 @@ body {
 .full-image {
     max-width: 100%;
     height: auto;
+}
+.contact {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact > h2 {
+    font-size: 50px;
+    font-style: italic;
+    color: #6BFFF7;
+}
+#contact-img {
+    margin-top: 50px;
+    max-width: 40%;
+    height: auto;
+    position: absolute;
+}
+.contact-box {
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.contacts {
+    display: flex;
+    color: white;
+    flex-direction: column;
+}
+.social-box {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.social {
+    max-width: 100%;
+    height: auto;
+}
+.footer {
+    text-align: center;
+    color: white;
 }
