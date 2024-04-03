@@ -6,22 +6,19 @@
 body {
     background-color: black;
     margin: 0;
-    overflow: auto;
 }
 #logo {
-    margin-top: 10px;
-    margin-left: 120px;
-    max-width: 40%;
+    max-width: 55%;
     height: auto;
-    
 }
 .header {
     background-color: black;
     display: flex;
-    color: #FAFB63;
-    font-size: 24px;
+    flex-wrap: wrap;
     min-width: 160px;
     width: 100%;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 4;
 }
@@ -40,9 +37,8 @@ body {
 }
 .nav-button:hover {
     background-color: #37903b; 
-  }
+}
 .hero {
-    background-color: black;
     color: #FAFB63;
     font-size: 61px;
     height: 1000px;
@@ -52,12 +48,10 @@ body {
 }
 .hero-img {
     position: absolute;
-    margin-right: 700px;
-
+    margin-right: 680px;
     z-index: 1;
 }
-#figure {
-    margin: 50px;
+#figure-img {
     max-width: 80%;
     height: auto;
 }
@@ -73,29 +67,23 @@ body {
     line-height: 1;
 }
 .team {
-    background-color: black;
     color: white;
-    height: 800px;
     display: flex;
 }
-@media (max-width: 850px) {
-    .team {
-    flex-direction: column;
-    }
-    .team-text {
-
-    }
+@media (max-width: 700px) {
     #team-img {
         display: none;
     }
-    #figure {
+    #figure-img {
         display: none;
     }
-
+    #contact-img {
+        display: none;
+    }
 }
 .team-text {
     margin: 50px;
-    width: 700px;
+    max-width: 800px;
     font-style: italic;
 }
 .team-text > h2 {
@@ -111,7 +99,7 @@ body {
     height: auto;
 }
 .join {
-    background-color: black;
+    text-align: center;
     color: #FAFB63;
     height: 800px;
     display: flex;
@@ -120,7 +108,7 @@ body {
     justify-content: center;
 }
 .join > h2 {
-    padding: 10px;
+    padding: 6px;
     font-size: 60px;
     color: #6BFFF7;
     font-style: italic;
@@ -131,7 +119,7 @@ body {
     padding: 0 15px;
     font-style: italic;
 }
-#join-btn {
+#submit-btn {
     background-color: #6BFFF7;
     border: none;
     color: black;
@@ -141,19 +129,22 @@ body {
     display: inline-block;
     font-family: sans-serif;
     font-size: 16px;
-    margin: 100px 20px;
+    margin: 70px 0px;
     cursor: pointer; 
 }
-.gallery {
-    background-color: black;
+.section {
+    text-align: center;
+    margin-top: 140px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-.gallery > h2 {
-    font-size: 50px;
+.section > h2 {
+    padding: 6px;
+    font-size: 44px;
+    font-style: italic;
     color: #6BFFF7;
 }
 .thumbnails {
@@ -172,18 +163,6 @@ body {
 .full-image {
     max-width: 100%;
     height: auto;
-}
-.contact {
-    margin-top: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.contact > h2 {
-    font-size: 50px;
-    font-style: italic;
-    color: #6BFFF7;
 }
 #contact-img {
     margin-top: 50px;
@@ -208,6 +187,28 @@ body {
 }
 .social {
     max-width: 100%;
+    height: auto;
+}
+#pay-form {
+    height: 800px;
+    color: #6BFFF7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    z-index: 2;
+}
+/* input[type="text"], [type="email"], textarea {
+    background-color : #322f2f; 
+} */
+#message {
+    width: 330px;
+    height: 150px;
+}
+#payment-img {
+    margin-left: 330px;
+    position: absolute;
+    max-width: 50%;
     height: auto;
 }
 .footer {
