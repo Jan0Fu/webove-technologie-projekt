@@ -39,7 +39,7 @@ body {
     background-color: #37903b; 
 }
 .hero {
-    height: 1000px;
+    height: 950px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,8 +55,9 @@ body {
 }
 .hero-text {
     color: #FAFB63;
-    font-size: 60px;
+    font-size: 58px;
     font-style: italic;
+    font-weight: bold;
     line-height: 1;
     width: 650px;
     text-align: center;
