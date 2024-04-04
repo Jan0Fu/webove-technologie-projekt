@@ -10,20 +10,64 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById("pay-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+function validateForm(event) {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const terms = document.getElementById("terms").checked;
+    const message = document.getElementById("message").value;
 
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var age = document.getElementById("age").checked;
-    var message = document.getElementById("message").value;
+    const nameError = document.getElementById("nameError");
+    const phoneError = document.getElementById("phoneError");
+    const emailError = document.getElementById("emailError");
+    const termsError = document.getElementById("termsError");
 
-    if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
-        alert("Please fill in all fields");
-        return;
+    var isValid = true;
+
+    if (name.trim() === "" || name.includes("0")) {
+        nameError.textContent = "Name is required";
+        isValid = false;
+    } else if (/\d/.test(name)) {
+        nameError.textContent = "Name cannot contain numbers";
+        isValid = false;
+    } else {
+        nameError.textContent = "";
     }
 
-    alert("Name: " + name + "\nEmail: " + email + "\nMessage: " + message);
+    if (!isValidPhone(phone)) {
+        phoneError.textContent = "Phone is invalid";
+        isValid = false;
+    } else {
+        phoneError.textContent = "";
+    }
 
-    // document.getElementById("pay-form").reset();
-});     
+    if (!isValidEmail(email)) {
+        emailError.textContent = "Email is invalid";
+        isValid = false;
+    } else {
+        emailError.textContent = "";
+    }
+
+    if (!terms) {
+        termsError.textContent = "You need to accept terms and conditions";
+        isValid = false;
+    } else {
+        termsError.textContent = "";
+    }
+
+    if (!isValid) {
+        event.preventDefault();
+    }
+
+    return isValid;
+}
+
+function isValidPhone(phone) {
+    var phoneRegex = /(\+421)? ?[1-9][0-9]{2} ?[0-9]{3} ?[0-9]{3}$/;
+    return phoneRegex.test(phone);
+}
+
+function isValidEmail(email) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
