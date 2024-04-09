@@ -131,6 +131,7 @@ body {
     font-size: 44px;
     font-style: italic;
     color: #6BFFF7;
+    z-index: 2;
 }
 .thumbnails {
     display: flex;
@@ -148,6 +149,19 @@ body {
 .full-image {
     max-width: 100%;
     height: auto;
+}
+table {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #ddd;
+    background-color: #635c5c;
 }
 #contact-img {
     margin-top: 50px;
@@ -171,7 +185,7 @@ body {
     justify-content: space-between;
 }
 .social {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 #pay-form {
@@ -186,9 +200,6 @@ body {
 #pay-form input {
     width: 100%;
 }
-/* input[type="text"], [type="email"], textarea {
-    background-color : #322f2f; 
-} */
 #payment-img {
     margin-left: 330px;
     position: absolute;
@@ -202,7 +213,7 @@ body {
     text-align: center;
     color: white;
 }
-@media (max-width: 800px) {
+@media (max-width: 790px) {
     .team-text > h2 {
         font-size: 40px;
         line-height: 1;
@@ -220,6 +231,9 @@ body {
     }
     #contact-img {
         display: none;
+    }
+    #pay-form {
+        width: 250px;
     }
 }
 @media (max-width: 600px) {

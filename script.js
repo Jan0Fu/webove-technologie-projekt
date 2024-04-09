@@ -1,16 +1,43 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const thumbnails = document.querySelectorAll('.thumbnails img');
-    const fullImage = document.querySelector('.full-image');
+document.addEventListener("DOMContentLoaded", function() {      // Images in gallery
+    const thumbnails = document.querySelectorAll(".thumbnails img");
+    const fullImage = document.querySelector(".full-image");
   
     thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-        const fullImageUrl = this.getAttribute('data-fullimage');
-        fullImage.setAttribute('src', fullImageUrl);
+        thumbnail.addEventListener("click", function() {
+        const fullImageUrl = this.getAttribute("data-fullimage");
+        fullImage.setAttribute("src", fullImageUrl);
         });
     });
 });
 
-function validateForm(event) {
+document.addEventListener('DOMContentLoaded', function () {     // JSON data for table
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                const tableBody = document.getElementById('table-body');
+                Object.keys(data.Crypto).forEach(cryptoName => {
+                    const cryptoData = data.Crypto[cryptoName][0];
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${cryptoName}</td>
+                        <td>${cryptoData.symbol}</td>
+                        <td>${cryptoData.price}</td>
+                        <td>${cryptoData.percent_change_24h}%</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                console.error('Error fetching data:', xhr.statusText);
+            }
+        } 
+    };
+    xhr.open('GET', '../crypto.json', true);
+    xhr.send();
+});
+
+function validateForm(event) {  // Form validation
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
@@ -63,11 +90,11 @@ function validateForm(event) {
 }
 
 function isValidPhone(phone) {
-    var phoneRegex = /(\+421)? ?[1-9][0-9]{2} ?[0-9]{3} ?[0-9]{3}$/;
+    const phoneRegex = /(\+421)? ?[1-9][0-9]{2} ?[0-9]{3} ?[0-9]{3}$/;
     return phoneRegex.test(phone);
 }
 
 function isValidEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }

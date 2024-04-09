@@ -1,0 +1,32 @@
+{
+    "Crypto": {
+        "Midas-Coin": [
+            {
+                "symbol": "MDC",
+                "price": 1001.32,
+                "percent_change_24h": -0.35
+            }
+        ],
+        "Bitcoin": [
+            {
+                "symbol": "BTC",
+                "price": 68123.45,
+                "percent_change_24h": 1.23
+            }
+        ],
+        "Ethereum": [
+            {
+                "symbol": "ETH",
+                "price": 3376.54,
+                "percent_change_24h": -0.5
+            }
+        ],
+        "Litecoin": [
+            {
+                "symbol": "LTC",
+                "price": 232.67,
+                "percent_change_24h": 0.8
+            }
+        ]
+    }
+}
