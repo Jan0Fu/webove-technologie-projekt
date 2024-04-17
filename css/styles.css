@@ -148,6 +148,7 @@ body {
 }
 .full-image-container {
     margin-top: 20px;
+    min-height: 270px;
 }
 .full-image {
     max-width: 100%;
@@ -213,22 +214,26 @@ th, td {
     color: red;
 }
 .footer {
+    margin-top: 100px;
     text-align: center;
     color: white;
 }
 @media (max-width: 1200px) {
     .team-text {
         max-width: 450px;
+        overflow: hidden;
     }
     .team-text > h2 {
         margin-top: 110px;
         font-size: 35px;
         line-height: 1;
+        overflow: hidden;
     }
 }
 @media (max-width: 760px) {
     .team {
         flex-direction: column;
+        align-items: center;
     }
     .team-text {
         text-align: center;
@@ -253,6 +258,9 @@ th, td {
         max-width: 40%;
         height: auto;
     }
+    .contact-box {
+        margin-right: 0;
+    }
     #contact-img {
         display: none;
     }
@@ -270,7 +278,6 @@ th, td {
     }
     .team-text > h2 {
         font-size: 28px;
-        overflow: hidden;
     }
     .main-header {
         font-size: 50px;
