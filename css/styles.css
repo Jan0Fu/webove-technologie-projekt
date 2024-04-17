@@ -75,6 +75,9 @@ body {
     max-width: 700px;
     font-style: italic;
 }
+.team-text > p {
+    text-align: justify;
+}
 .team-text > h2 {
     font-size: 56px;
     color: #6BFFF7;
@@ -179,6 +182,7 @@ th, td {
     justify-content: space-between;
 }
 .contacts {
+    text-align: left;
     display: flex;
     color: white;
     flex-direction: column;
@@ -236,7 +240,6 @@ th, td {
         align-items: center;
     }
     .team-text {
-        text-align: center;
         margin: 10px;
     }
     .team-text > h2 {
@@ -257,6 +260,9 @@ th, td {
         position: absolute;
         max-width: 40%;
         height: auto;
+    }
+    .contacts {
+        text-align: center;
     }
     .contact-box {
         margin-right: 0;
